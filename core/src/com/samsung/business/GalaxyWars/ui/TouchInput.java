@@ -20,7 +20,7 @@ public class TouchInput {
         if (Gdx.input.isTouched()) {
             touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
             camera.unproject(touchPos);
-            return touchPos.x <= MIDDLE_X && touchPos.y <MIDDLE_Y;
+            return touchPos.x <= TERTIO_X;
         }
         return false;
     }
@@ -29,7 +29,7 @@ public class TouchInput {
         if (Gdx.input.isTouched()) {
             touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
             camera.unproject(touchPos);
-            return touchPos.x > MIDDLE_X && touchPos.y <MIDDLE_Y;
+            return touchPos.x > 2*TERTIO_X;
         }
         return false;
     }
@@ -38,7 +38,7 @@ public class TouchInput {
         if (Gdx.input.isTouched()) {
             touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
             camera.unproject(touchPos);
-            return touchPos.y > MIDDLE_Y;
+            return touchPos.x > TERTIO_X && touchPos.x < 2 * TERTIO_X;
         }
         return false;
     }
